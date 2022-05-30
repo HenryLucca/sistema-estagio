@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useFetch } from '../../hooks/useFetch';
+import {Link, NavLink} from 'react-router-dom';
 import './FormularioCoordenador.css';
 
 const FormularioCoordenador = () => {
 
-    const url = 'http://localhost:3000/coordenador';
+    const url = 'https://sistema-estagio-api.herokuapp.com/coordenador';
     const { data: items, httpConfig, loading } = useFetch(url);
 
     const [nome, setNome] = useState('');
@@ -43,6 +44,8 @@ const FormularioCoordenador = () => {
         setToken('');
         setUsuario('');
         setSenha('');
+        window.location.href = '/login';
+
     };
     
     return (

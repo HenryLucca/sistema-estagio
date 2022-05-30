@@ -25,21 +25,21 @@ const Cadastro = () => {
                 </div>
 
                 <div className="card">
-                    {/* <Link> */}
+                    <Link to="/cadastro-empresa">
                         <div className="card-empresa">
                             <h2>Empresa</h2>
                             <img className="image" src={construcao} alt="empresa-icon" />
                         </div>
-                    {/* </Link> */}
+                    </Link>
                 </div>
 
                 <div className="card">
-                    {/* <Link> */}
-                        <div className="card-estagiário">
+                    <Link to="/cadastro-aluno">
+                        <div className="card-aluno">
                             <h2>Estágiario</h2>
                             <img className="image" src={chapeu_de_graduacao} alt="estagiario-icon" />
                         </div>
-                    {/* </Link> */}
+                    </Link>
                 </div>
             </div>
         </div>
