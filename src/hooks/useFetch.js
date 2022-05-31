@@ -38,6 +38,17 @@ export const useFetch = (url) => {
             setMethod("DELETE");
             setItemId(data);
           }
+
+        if(type === "empresa"){
+            setUserType("empresa");
+            url = "https://sistema-estagio-api.herokuapp.com/empresa"
+        } else if (type === "aluno"){
+            setUserType("aluno");
+            url = "https://sistema-estagio-api.herokuapp.com/aluno"
+        }else if (type === "coordenador"){
+            setUserType("coordenador");
+            url = "https://sistema-estagio-api.herokuapp.com/coordenador"
+        }
     }
 
     useEffect(() => {
@@ -58,7 +69,6 @@ export const useFetch = (url) => {
         fetchData();
     }, [url, callFetch]);
 
-    // 5 - refatorando post
     useEffect(() => {
 
         const httpRequest = async () => {
