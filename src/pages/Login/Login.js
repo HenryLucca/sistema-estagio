@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useLogin } from '../../hooks/useLogin';
+import { useLogadoContext } from '../../hooks/useLogadoContext';
+import { Link } from 'react-router-dom';
 import './Login.css'
+import { LogadoContext } from '../../context/usuarioLogadoContext';
 
 const Login = () => {
 
   const [usuario, setUsername] = useState('');
   const [senha, setSenha] = useState('');
   const [tipo, setTipo] = useState('coordenador');
+  //const { logado, setLogado } = useContext(LogadoContext);
+  const {logado, setLogado} = useContext(LogadoContext);
 
   const handleChange = (event) => {
     setTipo(event.target.value);
@@ -30,31 +35,33 @@ const Login = () => {
 
     let res, fetchData;
 
-    console.log(data.tipo);
-
+    
     if (data.tipo === "empresa") {
-
+      
       res = await fetch("https://sistema-estagio-api.herokuapp.com/empresa");
       fetchData = await res.json();
-    } else if (data.tipo === "aluno") {
+      console.log(fetchData);
 
+    } else if (data.tipo === "aluno") {
+      
       res = await fetch("https://sistema-estagio-api.herokuapp.com/aluno");
       fetchData = await res.json();
-
+      
     } else if (data.tipo === "coordenador") {
-
+      
       res = await fetch("https://sistema-estagio-api.herokuapp.com/coordenador");
       fetchData = await res.json();
     }
-
-    console.log(fetchData);
-
-
+    
+    //console.log(fetchData);
+    
     fetchData.forEach(element => {
-
+      
+      console.log(data);
       if (element.usuario === data.usuario && element.senha === data.senha) {
-
+        
         console.log("Login efetuado com sucesso!");
+        ChangeLogin(element);
 
         //window.location.href = "/home";
 
@@ -63,6 +70,16 @@ const Login = () => {
       }
     })
 
+  }
+
+  const ChangeLogin = (data) => {
+    console.log(data);
+    // const {logado, setLogado} = useContext(LogadoContext);
+    setLogado(data);
+    console.log(logado);
+    if(logado != null){
+      //window.location.href = `/login-${logado.tipo}`;
+    }
   }
 
     return (
@@ -90,8 +107,11 @@ const Login = () => {
             <label htmlFor="input-password">Password</label>
             <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(e) => setSenha(e.target.value)} required />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary">Validar Login</button>
         </form>
+        <button>
+          <Link to={`/login-${tipo}`}>Logar</Link>
+        </button>
 
       </div>
     )
