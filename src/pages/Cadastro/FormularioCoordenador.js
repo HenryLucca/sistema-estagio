@@ -54,21 +54,18 @@ const FormularioCoordenador = () => {
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <legend><b>Fórmulário para Cadastro do Coordenador</b></legend>
-                    <br />
 
                     <div className="inputBox">
                         <label htmlFor="nome" className="labelInput">Nome completo
                             <input type="text" name="nome" id="nome" className="inputUser" value={nome} onChange={(e) => setNome(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="email" className="labelInput">Email
                             <input type="text" name="email" id="email" className="inputUser" value={email} onChange={(e) => setEmail(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="cpf" className="labelInput">CPF
@@ -76,21 +73,18 @@ const FormularioCoordenador = () => {
                                 title="O CPF deve conter 11 números" required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
-                        <label htmlFor="email" className="labelInput">Token
+                        <label htmlFor="token" className="labelInput">Token
                             <input type="number" name="token" id="token" className="inputUser" value={token} onChange={(e) => setToken(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="usuario" className="labelInput">Usuário
                             <input type="text" name="usuario" id="usuario" className="inputUser" value={usuario} onChange={(e) => setUsuario(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="senha" className="labelInput">Senha
@@ -100,7 +94,6 @@ const FormularioCoordenador = () => {
                                 value={senha} onChange={(e) => setSenha(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <input type="submit" name="submit" id="submit" />
                 </fieldset>

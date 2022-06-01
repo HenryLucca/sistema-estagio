@@ -10,7 +10,7 @@ const Login = () => {
   const [usuario, setUsername] = useState('');
   const [senha, setSenha] = useState('');
   const [tipo, setTipo] = useState('coordenador');
-  //const { logado, setLogado } = useContext(LogadoContext);
+  const [validou, setValidou] = useState(false);
   const {logado, setLogado} = useContext(LogadoContext);
 
   const handleChange = (event) => {
@@ -77,9 +77,11 @@ const Login = () => {
     // const {logado, setLogado} = useContext(LogadoContext);
     setLogado(data);
     console.log(logado);
+
     if(logado != null){
-      //window.location.href = `/login-${logado.tipo}`;
+      setValidou(true);
     }
+    console.log(validou);
   }
 
     return (
@@ -107,11 +109,15 @@ const Login = () => {
             <label htmlFor="input-password">Password</label>
             <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(e) => setSenha(e.target.value)} required />
           </div>
-          <button type="submit" className="btn btn-primary">Validar Login</button>
+
+          {!validou ?
+            (
+              <button type="submit" className="btn btn-primary">Validar Login</button>
+            ) : (
+              <button id='logar'> <Link to={`/login-${tipo}`}>Logar</Link>  </button>
+            )}
+
         </form>
-        <button>
-          <Link to={`/login-${tipo}`}>Logar</Link>
-        </button>
 
       </div>
     )

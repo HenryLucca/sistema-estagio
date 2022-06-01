@@ -12,6 +12,7 @@ const FormularioEmpresa = () => {
     const [email, setEmail] = useState('');
     const [cpf, setCpf] = useState('');
     const [endereco, setEndereco] = useState('');
+    const [situacao, setSituacao] = useState('Buscando Estagio');
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
     
@@ -23,6 +24,7 @@ const FormularioEmpresa = () => {
             email,
             cpf,
             endereco,
+            situacao,
             usuario,
             senha
         };
@@ -33,6 +35,7 @@ const FormularioEmpresa = () => {
         setEmail('');
         setCpf('');
         setEndereco('');
+        setSituacao('');
         setUsuario('');
         setSenha('');
         window.location.href = '/login';
@@ -51,14 +54,12 @@ const FormularioEmpresa = () => {
                             <input type="text" name="nome" id="nome" className="inputUser" value={nome} onChange={(e) => setNome(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="email" className="labelInput">Email
                             <input type="text" name="email" id="email" className="inputUser" value={email} onChange={(e) => setEmail(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="cpf" className="labelInput">CPF
@@ -66,21 +67,18 @@ const FormularioEmpresa = () => {
                                 title="O CPF deve conter 11 números" required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="endereco" className="labelInput">Endereço
                             <input type="text" name="endereco" id="endereco" className="inputUser" value={endereco} onChange={(e) => setEndereco(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="usuario" className="labelInput">Usuário
                             <input type="text" name="usuario" id="usuario" className="inputUser" value={usuario} onChange={(e) => setUsuario(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="senha" className="labelInput">Senha
@@ -90,7 +88,15 @@ const FormularioEmpresa = () => {
                                 value={senha} onChange={(e) => setSenha(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
+
+                    <div>
+                        <label>Situação</label>
+                        <select id="situacao" name='situacao' onChange={(event) => {setSituacao(event.target.value)}}>
+                            <option value="buscando-estagio" >Buscando Estagio</option>
+                            <option value="desempregado">Desempregado</option>
+                            <option value="estagiando">Estagiando</option>
+                        </select>
+                    </div>
 
                     <input type="submit" name="submit" id="submit" />
                 </fieldset>

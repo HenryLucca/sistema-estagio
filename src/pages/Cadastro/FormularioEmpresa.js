@@ -11,6 +11,7 @@ const FormularioEmpresa = () => {
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [cpf, setCpf] = useState('');
+    const [telefone, setTelefone] = useState('');
     const [tipo, setTipo] = useState('');
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
@@ -22,6 +23,7 @@ const FormularioEmpresa = () => {
             nome,
             email,
             cpf,
+            telefone,
             tipo,
             usuario,
             senha
@@ -44,21 +46,18 @@ const FormularioEmpresa = () => {
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <legend><b>Fórmulário para Cadastro de Empresa</b></legend>
-                    <br />
 
                     <div className="inputBox">
                         <label htmlFor="nome" className="labelInput">Nome completo
                             <input type="text" name="nome" id="nome" className="inputUser" value={nome} onChange={(e) => setNome(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="email" className="labelInput">Email
                             <input type="text" name="email" id="email" className="inputUser" value={email} onChange={(e) => setEmail(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="cpf" className="labelInput">CPF
@@ -66,21 +65,24 @@ const FormularioEmpresa = () => {
                                 title="O CPF deve conter 11 números" required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
-                        <label htmlFor="email" className="labelInput">Token
-                            <input type="number" name="tipo" id="tipo" className="inputUser" value={tipo} onChange={(e) => setTipo(e.target.value)} required />
+                        <label htmlFor="telefone" className="labelInput">Telefone
+                            <input type="number" name="telefone" id="telefone" className="inputUser" value={telefone} onChange={(e) => setTelefone(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
+
+                    <div className="inputBox">
+                        <label htmlFor="tipo" className="labelInput">Tipo
+                            <input type="text" name="tipo" id="tipo" className="inputUser" value={tipo} onChange={(e) => setTipo(e.target.value)} required />
+                        </label>
+                    </div>
 
                     <div className="inputBox">
                         <label htmlFor="usuario" className="labelInput">Usuário
                             <input type="text" name="usuario" id="usuario" className="inputUser" value={usuario} onChange={(e) => setUsuario(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <div className="inputBox">
                         <label htmlFor="senha" className="labelInput">Senha
@@ -90,7 +92,6 @@ const FormularioEmpresa = () => {
                                 value={senha} onChange={(e) => setSenha(e.target.value)} required />
                         </label>
                     </div>
-                    <br /><br />
 
                     <input type="submit" name="submit" id="submit" />
                 </fieldset>
