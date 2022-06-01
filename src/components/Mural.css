@@ -1,0 +1,58 @@
+.mural{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E2E8F0;
+}
+.mural-titulo span{
+    color:#1e649d
+}
+.subtitulo{
+    margin-bottom: 0;
+}
+.mural p{
+    margin:0;
+    font-size: 0.8rem;
+}
+
+.vaga-lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    -webkit-box-pack: center;
+    margin-bottom: 4rem;
+    list-style: none;
+}
+.titulo-vaga{
+    display: ruby;
+}
+.vaga-icone{
+    margin-right: 0.5rem;
+    height: 1.5rem;
+}
+.vaga-item{
+    border: 0.2rem #4299e1 solid;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+.vaga-item:hover{
+    border: 0.2rem #1e649d solid;
+}
+.vaga-nome{
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 2px solid #222;
+}
+.vaga-descricao{
+    font-size: 1.2rem;
+}
+.vaga-requisitos{
+    font-size: 1.2rem;
+}
+.vaga-salario{
+    font-size: 1.2rem;
+    color: #333;
+}

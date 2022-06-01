@@ -2,6 +2,8 @@
 import Navbar from '../components/Navbar';
 //imagem
 import imagem from '../assets/images.png'
+//css
+import './Inicio.css'
 
 const Inicio = () => {
     return (

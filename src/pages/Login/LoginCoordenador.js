@@ -1,5 +1,6 @@
 import { useLogadoContext } from '../../hooks/useLogadoContext';
 import { useFetch } from '../../hooks/useFetch';
+import './LoginCoordenador.css'
 
 const LoginCoordenador = () => {
   const { logado } = useLogadoContext();
