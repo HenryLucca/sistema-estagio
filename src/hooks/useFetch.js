@@ -6,7 +6,6 @@ export const useFetch = (url) => {
     const [config, setConfig] = useState(null);
     const [method, setMethod] = useState(null);
     const [callFetch, setCallFetch] = useState(false);
-    const [userType, setUserType] = useState(null); // qual tipo de usuario (empresa, coordenador, aluno)
 
     const [loading, setLoading] = useState(false);
 
@@ -14,7 +13,7 @@ export const useFetch = (url) => {
 
     const [itemId, setItemId] = useState(null)
 
-    const httpConfig = (data, method, type) => {
+    const httpConfig = (data, method) => {
         // adicionar conta
         if(method === "POST"){
             setConfig({
@@ -38,18 +37,9 @@ export const useFetch = (url) => {
             setMethod("DELETE");
             setItemId(data);
           }
-
-        if(type === "empresa"){
-            setUserType("empresa");
-            url = "https://sistema-estagio-api.herokuapp.com/empresa"
-        } else if (type === "aluno"){
-            setUserType("aluno");
-            url = "https://sistema-estagio-api.herokuapp.com/aluno"
-        }else if (type === "coordenador"){
-            setUserType("coordenador");
-            url = "https://sistema-estagio-api.herokuapp.com/coordenador"
-        }
+        
     }
+
 
     useEffect(() => {
 
