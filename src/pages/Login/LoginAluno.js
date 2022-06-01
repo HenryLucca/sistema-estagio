@@ -1,3 +1,4 @@
+import Mural from '../../components/Mural';
 import { useLogadoContext } from '../../hooks/useLogadoContext';
 
 const LoginAluno = () => {
@@ -6,10 +7,12 @@ const LoginAluno = () => {
   console.log(logado);
 
   return (
-    <>
+    <div>
     <div>LoginAluno</div>
     <p>nome: {logado.usuario}</p>
-    </>
+    
+    <Mural />
+    </div>
   )
 }
 
