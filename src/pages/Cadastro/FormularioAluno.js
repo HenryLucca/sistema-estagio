@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useFetch } from '../../hooks/useFetch';
-import {NavLink} from 'react-router-dom';
 import './FormularioEmpresa.css';
 
 const FormularioEmpresa = () => {

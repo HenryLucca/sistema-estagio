@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useFetch } from '../../hooks/useFetch';
-import {NavLink} from 'react-router-dom';
 import './FormularioEmpresa.css';
 
 const FormularioEmpresa = () => {
 
     const url = 'https://sistema-estagio-api.herokuapp.com/empresa';
-    const { data: items, httpConfig, loading } = useFetch(url);
+    const { data: items, httpConfig } = useFetch(url);
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');

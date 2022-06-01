@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useFetch } from '../../hooks/useFetch';
-import {Link, NavLink} from 'react-router-dom';
 import './FormularioCoordenador.css';
 
 const FormularioCoordenador = () => {
