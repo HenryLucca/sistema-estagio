@@ -1,3 +1,91 @@
-.content{
-    color: blue;
+
+
+.apresentacao{
+    color: rgb(0, 131, 245);
+    height: 90vh;
+    background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80');
+    background-size: 135em 60em;
+    background-repeat: no-repeat;
+  
+}
+
+
+.inicioPrincipal{
+    display: flex;
+}
+
+.textoInicial{
+    font-family: 'Pacifico', cursive;
+    width: 50%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10em;
+  
+ 
+}
+
+
+.vantagensInicial{
+    width: 50%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.inicialParagrafo{
+    font-size: 4.5em;
+    font-weight: 100;
+    margin-right: 2em; 
+    color: rgb(68, 219, 236);
+    text-shadow: rgb(7, 1, 40) 2px 2px 2px;
+}
+
+
+.informacao{
+    width: 30em;
+    height: 45em;
+    background-color: white;
+    border-radius: 10%;
+}
+
+
+.tituloInicial{
+    font-family: 'Pacifico', cursive;
+    justify-content: center;
+    display: flex;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid;
+
+}
+
+.cardEmpresa{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid;
+ 
+}
+
+.cardEmpresa p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pacifico', cursive;
+
+}
+
+.cardEmpresa img{
+ width: auto;
+ height: 150px;
+
+}
+
+
+.cardEmpresa li{
+    font-family: 'Pacifico', cursive;
 }

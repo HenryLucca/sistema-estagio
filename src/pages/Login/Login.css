@@ -1,0 +1,103 @@
+.formulario{
+    height: 80vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.selectLogin{
+   
+   outline: 0;
+   box-shadow:none;
+   border:0;
+  cursor: pointer;
+    width:11em;
+   height: 3em;
+  margin-bottom: 2em;
+  border-radius: 10px;  
+  
+}
+
+
+.loginParant{
+    transition:all 0.4s;
+}
+
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.form-group-username{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.form-group-username input{
+    border: none;
+    border-bottom: solid 1px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+
+.user-icon{
+ position:absolute;
+ margin-left: 0.2em;
+}
+
+.form-group-password{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5em;
+
+}
+
+.form-group-password input{
+    border: none;
+    border-bottom: solid 1px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+.user-password{
+    position: absolute;
+    margin-left: 0.2em;
+}
+
+.form-container{
+    border: 1px solid;
+    width: 17em;
+    height: 20em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: black;
+
+}
+
+.button-submit{
+    border: none;
+    border-radius: 10%;
+    width: auto;
+    height: 40px;
+    padding: 1em;
+}
+
+.form-container2{
+    background-color: aqua;
+   border-radius: 20px;
+   width: 240px;
+   height: 300px;
+   align-self: center;
+}
