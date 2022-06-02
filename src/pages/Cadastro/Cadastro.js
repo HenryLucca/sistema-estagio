@@ -17,8 +17,8 @@ const Cadastro = () => {
 
                 <div className="card">
                     <Link to="/cadastro-coordenador">
-                        <div className="card-coordenador">
-                            <h2>Coordenador</h2>
+                        <div className="card-coordenador">                     
+                            <h2>Coordenador</h2>                         
                             <img className="image" src={utilizador} alt="coordenador-icon" />
                         </div>
                     </Link>
