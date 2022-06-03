@@ -18,7 +18,7 @@ const Mural = ({nome}) => {
                         vagas.map(vaga => (
                             <li key={vaga.id} className="vaga-item">
                                 <div className="titulo-vaga">
-                                <img src={iconeVaga} alt="icone de vaga" className="vaga-icone" />
+                                
                                 <h2 className="vaga-nome">{vaga.nome}</h2>
                                 </div>
                                 <p className="vaga-desc">{vaga.descricao}</p>

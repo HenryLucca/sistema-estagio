@@ -1,0 +1,68 @@
+.info-coordenador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.info-coordenador img{
+    border-radius: 100%;
+    width: auto;
+    height: 10em;
+}
+
+.alunos-coordenador{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.item-aluno{
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(238, 216, 216);
+    width:40em;
+    border-radius: 10px;
+    padding: 0.5em;
+
+}
+
+
+
+.empresas-coordenador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-empresa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-empresa p{
+    margin-left: 2em;
+}
+
+.aluno-component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2em;
+}
+
+.lista-aluno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mostView{
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
