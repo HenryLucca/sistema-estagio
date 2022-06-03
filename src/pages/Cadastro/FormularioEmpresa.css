@@ -1,0 +1,15 @@
+.form-empresa{
+    
+        border: 8px ridge #1C6EA4;
+        background-color: white;
+        height: 45em;
+        width: 30em;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        
+    
+    
+}
