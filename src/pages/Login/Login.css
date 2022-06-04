@@ -1,11 +1,14 @@
 .formulario{
-    height: 80vh;
+    height: 100vh;
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -43,14 +46,19 @@
 
 .form-group-username input{
     border: none;
-    border-bottom: solid 1px;
-    padding-left: 20px;
-    border-radius: 10px;
+    width: 15em;
+    height: 2.2em;
+    padding-left: 2em;
+    margin-bottom: 2em;
+    background-color: white;
+    border-bottom: 1px solid gray;
+
 }
 
 
 .user-icon{
  position:absolute;
+ margin-top: 0.3em;
  margin-left: 0.2em;
 }
 
@@ -64,40 +72,42 @@
 
 .form-group-password input{
     border: none;
-    border-bottom: solid 1px;
-    padding-left: 20px;
-    border-radius: 10px;
+    width: 15em;
+    height: 2.2em;
+    padding-left: 2em;
+    margin-bottom: 2em;
+    background-color: white;
+    border-bottom: 1px solid gray;
 }
 
 .user-password{
     position: absolute;
+    margin-top: 0.3em;
     margin-left: 0.2em;
 }
 
-.form-container{
-    border: 1px solid;
-    width: 17em;
-    height: 20em;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: black;
-
-}
 
 .button-submit{
+    color: aliceblue;
     border: none;
     border-radius: 10%;
-    width: auto;
-    height: 40px;
     padding: 1em;
+    border-radius: 10px;
+    background: rgb(149,147,195);
+    background: linear-gradient(90deg, rgba(149,147,195,1) 0%, rgba(107,107,224,1) 30%, rgba(95,179,196,1) 81%);
+    margin-top: 2em;
+    width: 144px;
+    height: 50px;
 }
 
 .form-container2{
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
    border-radius: 20px;
-   width: 240px;
-   height: 300px;
+   height: 28em;
+    width:20em;
    align-self: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border: 8px ridge #1C6EA4;
 }

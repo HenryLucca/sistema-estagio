@@ -15,9 +15,13 @@ const LoginEmpresa = () => {
     <img src={empresa}/>
       <p>{logado.usuario}</p>
 
+     
+    
+    <div class='divPai'>
+      <div className='coordenadores'>
+        <div className='empresah1'>
       <h1>Coordenadores</h1>
-
-      <div>
+      </div>
         <ul className='lista-coordenador'>
           {listaDeCoordenador &&
             listaDeCoordenador.map(coordenador => (
@@ -50,7 +54,7 @@ const LoginEmpresa = () => {
         <PostarVaga />
       </div>
       </div>
-
+      </div>
     </div>
   )
 }

@@ -16,7 +16,7 @@ const Cadastro = () => {
             <div className="row">
 
                 <div className="card">
-                    <Link to="/cadastro-coordenador">
+                    <Link className="Link" to="/cadastro-coordenador">
                         <div className="card-coordenador">                     
                             <h2>Coordenador</h2>                         
                             <img className="image" src={utilizador} alt="coordenador-icon" />
@@ -25,7 +25,7 @@ const Cadastro = () => {
                 </div>
 
                 <div className="card">
-                    <Link to="/cadastro-empresa">
+                    <Link  className="Link" to="/cadastro-empresa">
                         <div className="card-empresa">
                             <h2>Empresa</h2>
                             <img className="image" src={construcao} alt="empresa-icon" />
@@ -34,7 +34,7 @@ const Cadastro = () => {
                 </div>
 
                 <div className="card">
-                    <Link to="/cadastro-aluno">
+                    <Link className="Link" to="/cadastro-aluno">
                         <div className="card-aluno">
                             <h2>Estágiario</h2>
                             <img className="image" src={chapeu_de_graduacao} alt="estagiario-icon" />

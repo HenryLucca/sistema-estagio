@@ -9,26 +9,39 @@
     border-radius: 100%;
     width: auto;
     height: 10em;
+    margin-top: 3em;
 }
 
 .alunos-coordenador{
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 
 .item-aluno{
     display: flex;    
     align-items: center;
-    justify-content: center;
-    background-color: rgb(238, 216, 216);
+   justify-content: space-between;
+    background-color: rgb(255, 255, 255);
     width:40em;
     border-radius: 10px;
     padding: 0.5em;
-
 }
 
+.itemEmpresa{
+    display: flex;    
+    align-items: center;
+   justify-content:space-evenly;
+    background-color: rgb(255, 255, 255);
+    width:40em;
+    border-radius: 10px;
+    padding: 0.5em;
+    
+    
+
+}
 
 
 .empresas-coordenador{
@@ -66,3 +79,36 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.h1Container1{
+ background-color: rgb(255, 255, 255);
+ width: 134px;
+height: 60px;
+border-radius: 10px;
+display: flex;
+   align-items: center;
+   justify-content: center;
+ 
+}
+
+.h1Container2{
+    background-color: rgb(255, 255, 255);
+    width: 170px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+    
+   }
+
+.h1Container1 h1{
+width: 134px;
+height: 30px;
+}
+
+.h1Container2 h1{
+    width: 134px;
+    height: 30px;
+    }
+    

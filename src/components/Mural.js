@@ -11,7 +11,7 @@ const Mural = ({nome}) => {
         <div className="mural">
             <h1 className="mural-titulo">Mural de <span>Vagas</span> </h1>
             <h4 className="subtitulo">Olá, {nome}, aqui estão algumas oportunidades para você:</h4>
-            <p>Caso se interesse por alguma, fale com seu Coordenador &#128540;</p>
+            <p className="interesse">Caso se interesse por alguma, fale com seu Coordenador </p>
             <div>
                 <ul className="vaga-lista">
                     {vagas &&

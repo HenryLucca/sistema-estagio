@@ -8,5 +8,5 @@
 
 .Vagas{
     height: 100vh;
-    background-color: #E2E8F0;
+    background-image: linear-gradient(to right, rgb(27, 27, 27), rgb(0, 45, 66));
 }

@@ -4,8 +4,8 @@
 .navbar{
     display: flex;
    justify-content: space-between;
-   height: 10vh;
-   background-color:antiquewhite;
+   height: 5vh;
+   background-color:rgb(0, 45, 66);;
   
 }
 
@@ -24,7 +24,7 @@
 .navlink{
   
     text-decoration: none;
-    color: black; 
+    color: rgb(255, 255, 255); 
 }
 
 
@@ -45,6 +45,12 @@
     display: flex;
     align-items: center;
     margin-left: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255); 
+    font-weight: bold;
    
+}
+.iconNav{
+    color: rgb(255, 255, 255); 
 }
 

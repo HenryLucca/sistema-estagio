@@ -13,24 +13,23 @@ const Navbar = () => {
     <nav className="navbar">
 
       <div className="imagemTrabalhoDiv">
-      <img className="imagemTrabalho" src ={pasta}/>
-      <p className="frase">A sua carreira começa aqui</p>
+      <p className="frase">A Sua Carreira Começa Aqui</p>
       </div>
       
       <div className="boxSettings">
       <div className="navIcon">
         <NavLink className="navlink" to="/" >Inicio</NavLink>
-        <AiFillHome/>
+        <AiFillHome className="iconNav"/>
         </div>
         
         <div className="navIcon">       
         <NavLink className="navlink" to="/login">Entrar</NavLink>
-        <IoLogInSharp/>
+        <IoLogInSharp className="iconNav" />
         </div>
 
         <div className="navIcon">
         <NavLink className="navlink" to="/cadastro">Cadastrar-se</NavLink>
-        <GiArchiveRegister/>
+        <GiArchiveRegister className="iconNav"/>
         </div>
         </div>
     </nav>

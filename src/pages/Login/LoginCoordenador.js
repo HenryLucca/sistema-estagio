@@ -29,7 +29,9 @@ const LoginCoordenador = () => {
       </div>
       <div className='flex-coord'>
       <div class='alunos-coordenador'>
+        <div className='h1Container1'>
       <h1>Alunos</h1>
+      </div>
         <div>
           <ul className='lista-aluno'>
             {alunos &&
@@ -69,12 +71,14 @@ const LoginCoordenador = () => {
 
 
       <div className='empresas-coordenador'>
+      <div className='h1Container2'>
       <h1>Empresas</h1>
+      </div>
       <div>
         <ul className='lista-empresa'>
           {empresas &&
             empresas.map(empresa => (
-              <li key={empresa.id} className='item-aluno'>
+              <li key={empresa.id} className='itemEmpresa'>
                 
                 
                 <div className='aluno-component'> 
@@ -92,10 +96,6 @@ const LoginCoordenador = () => {
                    <p>{empresa.cpf}</p>   
                   </div>
 
-                 <div className='aluno-component'> 
-                
-                   <p>{empresa.endereco}</p>
-                </div>
 
                  <div className='aluno-component'>
                    <BsTelephone/>
