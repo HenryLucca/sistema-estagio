@@ -28,7 +28,7 @@ const Navbar = () => {
         </div>
 
         <div className="navIcon">
-        <NavLink className="navlink" to="/cadastro">Cadastrar-se</NavLink>
+        <NavLink className="navlink" to="/cadastro">Cadastrar</NavLink>
         <GiArchiveRegister className="iconNav"/>
         </div>
         </div>
