@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { useFetch } from '../../hooks/useFetch';
 import './FormularioEmpresa.css';
+import { BsFillPersonFill } from 'react-icons/bs'
+import { RiLockPasswordLine } from 'react-icons/ri'
+import { MdPassword} from 'react-icons/md'
+import { AiOutlineFieldNumber ,AiOutlineMail} from 'react-icons/ai'
+import { FaUserCircle} from 'react-icons/fa'
+import { FiType} from 'react-icons/fi'
+
 
 const FormularioEmpresa = () => {
 
@@ -41,59 +48,60 @@ const FormularioEmpresa = () => {
     
     return (
 
-        <div className="box">
-            <form onSubmit={handleSubmit}>
-                <fieldset>
-                    <legend><b>Fórmulário para Cadastro de Empresa</b></legend>
+        <div className="box-coordenador">
+            <form className='form-empresa' onSubmit={handleSubmit}>
+                <div className='cadastro-coordenador'>
+                    <legend class='titulo-cadastro'><b>Register</b></legend>
 
                     <div className="inputBox">
-                        <label htmlFor="nome" className="labelInput">Nome completo
+                        <label htmlFor="nome" className="labelInput">Nome </label>
                             <input type="text" name="nome" id="nome" className="inputUser" value={nome} onChange={(e) => setNome(e.target.value)} required />
-                        </label>
+                            <BsFillPersonFill className='cadastro-icone'/>
                     </div>
 
                     <div className="inputBox">
-                        <label htmlFor="email" className="labelInput">Email
+                        <label htmlFor="email" className="labelInput">Email </label>
                             <input type="text" name="email" id="email" className="inputUser" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                        </label>
+                            <AiOutlineMail className='cadastro-icone'/>
                     </div>
 
                     <div className="inputBox">
-                        <label htmlFor="cpf" className="labelInput">CPF
+                        <label htmlFor="cpf" className="labelInput">CPF </label>
                             <input type="text" name="cpf" id="cpf" className="inputUser" value={cpf} onChange={(e) => setCpf(e.target.value)} pattern="^(?=.*[0-9]).{11}$"
                                 title="O CPF deve conter 11 números" required />
-                        </label>
+                             <AiOutlineFieldNumber className='cadastro-icone'/>    
+                       
                     </div>
 
                     <div className="inputBox">
-                        <label htmlFor="telefone" className="labelInput">Telefone
+                        <label htmlFor="telefone" className="labelInput">Telefone </label>
                             <input type="number" name="telefone" id="telefone" className="inputUser" value={telefone} onChange={(e) => setTelefone(e.target.value)} required />
-                        </label>
+                            <RiLockPasswordLine className='cadastro-icone'/>
                     </div>
 
                     <div className="inputBox">
-                        <label htmlFor="tipo" className="labelInput">Tipo
+                        <label htmlFor="tipo" className="labelInput">Tipo </label>
                             <input type="text" name="tipo" id="tipo" className="inputUser" value={tipo} onChange={(e) => setTipo(e.target.value)} required />
-                        </label>
+                            <FiType className='cadastro-icone'/> 
                     </div>
 
                     <div className="inputBox">
-                        <label htmlFor="usuario" className="labelInput">Usuário
+                        <label htmlFor="usuario" className="labelInput">Usuário </label>
                             <input type="text" name="usuario" id="usuario" className="inputUser" value={usuario} onChange={(e) => setUsuario(e.target.value)} required />
-                        </label>
+                            <FaUserCircle className='cadastro-icone'/>   
                     </div>
 
                     <div className="inputBox">
-                        <label htmlFor="senha" className="labelInput">Senha
+                        <label htmlFor="senha" className="labelInput">Senha </label>
                             <input type="password" name="senha" id="senha" className="inputUser"
                                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$"
                                 title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos."
                                 value={senha} onChange={(e) => setSenha(e.target.value)} required />
-                        </label>
+                                <MdPassword className='cadastro-icone'/>
                     </div>
 
-                    <input type="submit" name="submit" id="submit" />
-                </fieldset>
+                    <input type="submit" className='submit-button' name="submit" id="submit" />
+                </div>
             </form>
         </div>
     )

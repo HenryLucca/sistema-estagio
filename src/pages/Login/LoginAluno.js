@@ -8,8 +8,8 @@ const LoginAluno = () => {
   console.log(logado);
 
   return (
-    <div>
-      <h1>Login Aluno</h1>
+    <div className='Vagas'>
+ 
       
     <Mural nome={logado.nome} />
     </div>

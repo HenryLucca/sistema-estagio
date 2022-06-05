@@ -3,17 +3,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #E2E8F0;
+    background-image: linear-gradient(to right, rgb(27, 27, 27), rgb(0, 45, 66));
 }
 .mural-titulo span{
     color:#1e649d
 }
+.mural-titulo {
+    color:#ffffff
+}
 .subtitulo{
     margin-bottom: 0;
+    color:#ffffff;
 }
-.mural p{
+
+.interesse{
+    color:#ffffff;
     margin:0;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .vaga-lista{
@@ -34,25 +40,30 @@
     height: 1.5rem;
 }
 .vaga-item{
-    border: 0.2rem #4299e1 solid;
+    border: 0.2rem #000000 solid;
     border-radius: 2rem;
     padding: 0.5rem;
+   background-color: #fff;
+   width: 500px;
+   height: 190px;
 }
 .vaga-item:hover{
-    border: 0.2rem #1e649d solid;
+    border: 0.2rem #ff0000 solid;
 }
 .vaga-nome{
+    display: flex;
     font-size: 1.5rem;
     font-weight: bold;
     border-bottom: 2px solid #222;
+    justify-content: center;
 }
 .vaga-descricao{
-    font-size: 1.2rem;
+    font-size: 210px;
 }
 .vaga-requisitos{
     font-size: 1.2rem;
 }
 .vaga-salario{
-    font-size: 1.2rem;
+    font-size: 1em;
     color: #333;
 }

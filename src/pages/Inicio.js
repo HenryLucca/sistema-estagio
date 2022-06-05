@@ -1,35 +1,41 @@
 //componente
 import Navbar from '../components/Navbar';
 //imagem
-import imagem from '../assets/images.png'
+import logo from '../assets/logo.png'
+
 //css
 import './Inicio.css'
 
+
 const Inicio = () => {
     return (
-        <div>
-            <Navbar/>
-            <div className="content" id="inicio">
-                <h1>Conheça a sua nova comunidade profissional</h1>
-                <img src={imagem} alt="imagem home" />
-            </div>
-            <div className="page">
-                <h1>Aqui o coordenador encontra: </h1>
+       
+            
+            <div>
+                 <Navbar/>
+                 <div className="apresentacao">
+                     <div className="inicioPrincipal">
 
-                <div className="row">
-                    <div className="card caracteristicas">
-                            <h2>Um ambiente personalizado para fácil entendimento</h2>
-                    </div>
+                       
+                       <div className='textoInicial'>                   
+                           <p className='inicialParagrafo'>O gerenciador de Estágios</p>
+                           <p className='inicialParagrafo'> Feito especialmente</p>
+                           <p className='inicialParagrafo'>Para você</p>                                           
+                       
+                        </div>
 
-                    <div className="card caracteristicas">
-                            <h2>Um ambiente filtrado e com informações dispostas e atualizadas sempre que quiser</h2>
-                    </div>
-                    <div className="card caracteristicas">
-                            <h2>Um ambiente com chat para conversar facilmente com os alunos</h2>
-                    </div>
-                </div>
+                        <div className='logo'>
+                            <img src={logo}/>
+                        </div>
+             
+
+                     </div>
+                 </div>
+                 <style>
+                @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+                </style>
             </div>
-        </div>
+            
     )
 }
 

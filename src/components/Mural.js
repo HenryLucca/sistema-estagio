@@ -11,14 +11,14 @@ const Mural = ({nome}) => {
         <div className="mural">
             <h1 className="mural-titulo">Mural de <span>Vagas</span> </h1>
             <h4 className="subtitulo">Olá, {nome}, aqui estão algumas oportunidades para você:</h4>
-            <p>Caso se interesse por alguma, fale com seu Coordenador &#128540;</p>
+            <p className="interesse">Caso se interesse por alguma, fale com seu Coordenador </p>
             <div>
                 <ul className="vaga-lista">
                     {vagas &&
                         vagas.map(vaga => (
                             <li key={vaga.id} className="vaga-item">
                                 <div className="titulo-vaga">
-                                <img src={iconeVaga} alt="icone de vaga" className="vaga-icone" />
+                                
                                 <h2 className="vaga-nome">{vaga.nome}</h2>
                                 </div>
                                 <p className="vaga-desc">{vaga.descricao}</p>

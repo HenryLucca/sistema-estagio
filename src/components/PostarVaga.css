@@ -1,0 +1,14 @@
+.botaoStyle{
+    padding: 1em;
+    border-radius: 10px;
+    background: rgb(149,147,195);
+    background: linear-gradient(90deg, rgba(149,147,195,1) 0%, rgba(107,107,224,1) 30%, rgba(95,179,196,1) 81%);
+    width: 144px;
+    height: 50px;
+}
+
+.formVagas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
