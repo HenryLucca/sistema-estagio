@@ -87,6 +87,7 @@ const Login = () => {
     console.log(validou);
   }
 
+
     return (
       <div className='formulario'>
         <div className='form-container'>
@@ -120,9 +121,11 @@ const Login = () => {
 
           {!validou ?
             (
-              <button type="submit" className="btn btn-primary button-submit">Validar Login</button>
+              <button type="submit" className="btn btn-primary button-submit" id="botao">
+                Validar Login
+                </button>
             ) : (
-              <button className="button-submit" id='logar'> <Link to={`/login-${tipo}`}>Logar</Link>  </button>
+              <button className="button-submit" id= "logar"> <Link to={`/login-${tipo}`}>Logar</Link>  </button>
             )}
 
         </form>
