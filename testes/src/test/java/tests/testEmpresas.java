@@ -48,8 +48,8 @@ public class testEmpresas {
         WebDriver navegador = new ChromeDriver();
         navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);   //configure this timer in relation to your connection,
         // give the page enough time to load
-        //navegador.get("https://sistema-estagio.vercel.app/login");
-        navegador.get("http://localhost:3000/login");
+        navegador.get("https://sistema-estagio.vercel.app/login");
+        //navegador.get("http://localhost:3000/login");
 
         navegador.findElement(By.id("exampleInputEmail1")).sendKeys("TesteEmpresa");
         navegador.findElement(By.id("exampleInputPassword1")).sendKeys("TesteEmp123");
