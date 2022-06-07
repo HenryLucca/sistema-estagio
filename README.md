@@ -1,6 +1,8 @@
 # Sistema de Estágio 🤓
 
 O projeto esta disponivel em: [Sistema Estagio](https://sistema-estagio.vercel.app)
+O slide esta disponivel em: [Canvas](https://www.canva.com/design/DAFC2wqbvlU/gfBAGbftdPq4qCLLVvCKfA/view?utm_content=DAFC2wqbvlU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+O Trello esta disponivel em: [Trello](https://trello.com/b/MUO424ym/engenharia-de-software)
 
 ## Tecnologias utilizadas
 
