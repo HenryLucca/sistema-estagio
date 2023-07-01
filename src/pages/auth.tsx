@@ -46,6 +46,7 @@ export default function Auth(){
                     type="text"
                     onChange={setUsername}
                 />
+                <div className="mb-2.5"></div>
                 <AuthInput
                     label="Senha"
                     value={password}

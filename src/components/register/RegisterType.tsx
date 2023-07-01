@@ -14,8 +14,7 @@ export default function RegisterType(props: RegisterTypeProps) {
   return (
     <div
       className={`
-            ${theme}
-            ${theme === "dark" ? "bg-zinc-900" : "bg-white"}
+            bg-white dark:bg-zinc-900
             h-screen w-screen
             flex flex-col items-center justify-center
         `}
@@ -64,7 +63,7 @@ export default function RegisterType(props: RegisterTypeProps) {
         </div>
 
         <div
-          onClick={() => props.optionSelect("estagiario")}
+          onClick={() => props.optionSelect("aluno")}
           className={`
                     bg-zinc-200 dark:bg-zinc-800 mx-8 
                     flex items-center justify-center rounded-2xl

@@ -4,15 +4,14 @@ export default class Company extends User {
     type: string;
 
     constructor(
-        id: number | null,
+        id: string | null,
         name: string,
-        email: string,
         cpf: string,
-        username: string,
+        email: string,
         password: string,
         type: string
     ) {
-        super(id, name, email, cpf, username, password);
+        super(id, name, cpf, email, password, "company");
         this.type = type;
     }
 }

@@ -6,16 +6,15 @@ export default class Intern extends User {
     situation: string;
 
     constructor(
-        id: number | null,
+        id: string | null,
         name: string,
-        email: string,
         cpf: string,
-        username: string,
+        email: string,
         password: string,
         address: string,
         situation: string
     ) {
-        super(id, name, email, cpf, username, password);
+        super(id, name, cpf, email, password, "intern");
         this.address = address;
         this.situation = situation;
     }

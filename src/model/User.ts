@@ -1,27 +1,27 @@
 export default abstract class User {
-    #id: number | null;
+    #id: string | null;
     #name: string;
-    #email: string;
     #cpf: string;
-    #usename: string;
+    #email: string;
     #password: string;
+    #userType: string;
 
     //implement constructor
 
     constructor(
-        id: number | null,
+        id: string | null,
         name: string,
-        email: string,
         cpf: string,
-        username: string,
-        password: string
+        email: string,
+        password: string,
+        userType: string
     ) {
         this.#id = id;
         this.#name = name;
-        this.#email = email;
         this.#cpf = cpf;
-        this.#usename = username;
+        this.#email = email;
         this.#password = password;
+        this.#userType = userType;
     }
 
     get id() {
@@ -40,12 +40,12 @@ export default abstract class User {
         return this.#cpf;
     }
 
-    get username() {
-        return this.#usename;
-    }
-
     get password() {
         return this.#password;
+    }
+
+    get userType() {
+        return this.#userType;
     }
     
 }
