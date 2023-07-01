@@ -22,6 +22,10 @@ export default function CompanyRegister(){
         <div>
             <form>
                 <legend>Cadastro</legend>
+
+                <div>
+                    
+                </div>
             </form>
         </div>
     )

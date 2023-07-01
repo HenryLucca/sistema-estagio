@@ -1,51 +1,21 @@
 export default abstract class User {
-    #id: string | null;
-    #name: string;
-    #cpf: string;
-    #email: string;
-    #password: string;
-    #userType: string;
-
-    //implement constructor
+    uid: string;
+    email: string;
+    displayName: string;
+    token: string;
+    photoURL: string;
 
     constructor(
-        id: string | null,
-        name: string,
-        cpf: string,
+        uid: string,
         email: string,
-        password: string,
-        userType: string
+        displayName: string,
+        token: string,
+        photoURL: string
     ) {
-        this.#id = id;
-        this.#name = name;
-        this.#cpf = cpf;
-        this.#email = email;
-        this.#password = password;
-        this.#userType = userType;
+        this.uid = uid;
+        this.email = email;
+        this.displayName = displayName;
+        this.token = token;
+        this.photoURL = photoURL;
     }
-
-    get id() {
-        return this.#id;
-    }
-
-    get name() {
-        return this.#name;
-    }
-
-    get email() {
-        return this.#email;
-    }
-
-    get cpf() {
-        return this.#cpf;
-    }
-
-    get password() {
-        return this.#password;
-    }
-
-    get userType() {
-        return this.#userType;
-    }
-    
 }
