@@ -12,7 +12,7 @@ const AppContext = createContext<AppContextProps>({
 
 export function AppProvider(props: any){
 
-    const [theme, setTheme] = useState(''); 
+    const [theme, setTheme] = useState('dark'); 
 
     function changeTheme(){
         const newTheme = theme === 'dark' ? '' : 'dark';
