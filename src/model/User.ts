@@ -3,19 +3,19 @@ export default abstract class User {
     email: string;
     displayName: string;
     token: string;
-    photoURL: string;
+    // photoURL: string;
 
     constructor(
         uid: string,
         email: string,
         displayName: string,
         token: string,
-        photoURL: string
+        // photoURL: string
     ) {
         this.uid = uid;
         this.email = email;
         this.displayName = displayName;
         this.token = token;
-        this.photoURL = photoURL;
+        // this.photoURL = photoURL;
     }
 }

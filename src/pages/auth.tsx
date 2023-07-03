@@ -1,6 +1,7 @@
 import AuthInput from "@/components/auth/AuthInput";
 import ChangeThemeButton from "@/components/page-components/ChangeThemeButton";
 import useAppData from "@/hooks/useContext/useAppData";
+import useAuth from "@/hooks/useContext/useAuth";
 import { Icon4MonkeysInc, IconGoogle, IconWarning } from "@/icons/icons";
 import Link from "next/link";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import { useState } from "react";
 export default function Auth() {
   const [authType, setAuthType] = useState<"login" | "register">("login");
   const { theme, changeTheme } = useAppData();
+  const { register, login, loginGoogle } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
@@ -16,6 +18,23 @@ export default function Auth() {
   function showError(message: string, timeInSeconds = 5) {
     setError(message);
     setTimeout(() => setError(""), timeInSeconds * 1000);
+  }
+
+  async function submit() {
+    if (authType === "login") {
+      if (login) {
+        await login(email, password);
+      }
+    } else {
+      if (password !== passwordConfirm) {
+        showError("Senhas não conferem!");
+        return;
+      }
+
+      if (register) {
+        await register(email, password);
+      }
+    }
   }
 
   return (
@@ -82,7 +101,7 @@ export default function Auth() {
         </div>
 
         <button
-          onClick={() => showError("Funcionalidade não implementada")}
+          onClick={submit}
           className="w-full bg-indigo-500 hover:bg-indigo-400 text-white rounded-lg px-4 py-3 mt-6"
         >
           {authType === "login" ? "Entrar" : "Cadastrar"}
@@ -91,9 +110,7 @@ export default function Auth() {
         <hr className="my-6 border-gray-300 w-full" />
 
         <button
-          onClick={() => {
-            showError("Funcionalidade não implementada");
-          }}
+          onClick={loginGoogle}
           className={`
                     w-full bg-red-500 hover:bg-red-400
                     text-white rounded-lg px-4 py-3 mb-3

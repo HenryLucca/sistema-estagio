@@ -1,8 +1,11 @@
 import Image from "next/image";
 import SideItem from "./SideItem";
-import { IconHome } from "@/icons/icons";
+import { IconHome, IconLogout } from "@/icons/icons";
+import useAuth from "@/hooks/useContext/useAuth";
 
 export default function SideBar() {
+
+  const {logout } = useAuth();
 
   return (
     <aside className={`
@@ -24,7 +27,7 @@ export default function SideBar() {
         <SideItem text="Início" icon={IconHome} url="/" />
       </ul>
       
-      {/* <ul className={`flex`}>
+      <ul className={`flex`}>
         <SideItem
           text="Sair"
           icon={IconLogout}
@@ -34,7 +37,7 @@ export default function SideBar() {
             hover:bg-red-400 hover:text-white dark:hover:text-white
             `}
         />
-      </ul> */}
+      </ul>
     </aside>
   );
 }
