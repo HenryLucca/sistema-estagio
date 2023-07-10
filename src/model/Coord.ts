@@ -1,4 +1,4 @@
-import User from "./User";
+import User from "./AuthUser";
 
 export default class Coord extends User{
     token: string;

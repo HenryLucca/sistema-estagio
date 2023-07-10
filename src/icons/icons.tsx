@@ -126,6 +126,24 @@ export const IconPost = (
     />
   </svg>
 );
+////////////////////////////// ICON PROFILE ////////////////////////////////
+export const IconProfile = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="w-6 h-6"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+    />
+  </svg>
+);
+
 ////////////////////////////// ICON GOOGLE ////////////////////////////////
 export const IconGoogle = (
   <svg
@@ -138,7 +156,7 @@ export const IconGoogle = (
     fill="none"
     stroke-linecap="round"
     stroke-linejoin="round"
-    style={{display: 'inline-block', verticalAlign: 'middle'}}
+    style={{ display: "inline-block", verticalAlign: "middle" }}
   >
     <path stroke="none" d="M0 0h24v24H0z" />
     <path d="M17.788 5.108A9 9 0 1021 12h-8" />
@@ -153,7 +171,7 @@ export const Icon4MonkeysInc = (
     height="24.000000pt"
     viewBox="0 0 24.000000 24.000000"
     preserveAspectRatio="xMidYMid meet"
-    style={{display: 'inline-block', verticalAlign: 'middle'}}
+    style={{ display: "inline-block", verticalAlign: "middle" }}
   >
     <g
       transform="translate(0.000000,24.000000) scale(0.002344,-0.002344)"

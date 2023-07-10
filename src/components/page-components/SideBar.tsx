@@ -1,6 +1,6 @@
 import Image from "next/image";
 import SideItem from "./SideItem";
-import { IconHome, IconLogout } from "@/icons/icons";
+import { IconHome, IconLogout, IconProfile } from "@/icons/icons";
 import useAuth from "@/hooks/useContext/useAuth";
 
 export default function SideBar() {
@@ -25,6 +25,7 @@ export default function SideBar() {
       
       <ul className="flex-grow">
         <SideItem text="Início" icon={IconHome} url="/" />
+        <SideItem text="Perfil" icon={IconProfile} url="/profile" />
       </ul>
       
       <ul className={`flex`}>

@@ -1,4 +1,4 @@
-import User from "./User";
+import User from "./AuthUser";
 
 export default class Company extends User {
     type: string;

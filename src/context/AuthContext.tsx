@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import Cookie from "js-cookie";
 import firebase from "../firebase/config";
-import User from "@/model/User";
+import User from "@/model/AuthUser";
 import { useRouter } from "next/router";
 
 interface AuthContextProps {
@@ -92,7 +92,7 @@ export function AuthProvider(props: any) {
   async function logout() {
     // await firebase.auth().signOut();
     // setUser(null);
-    // router.push("/");
+    // router.push("/auth");
   }
 
   useEffect(() => {

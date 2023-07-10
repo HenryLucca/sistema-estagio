@@ -1,6 +1,6 @@
-import User from "./User";
+import UserData from "./UserData";
 
-export default class Intern extends User {
+export default class Intern extends UserData {
     
     address: string;
     situation: string; // situation can only be "Searching for internship", "Internship in progress" or "Unemployed"
@@ -8,14 +8,11 @@ export default class Intern extends User {
     constructor(
         uid: number | null,
         name: string,
-        email: string,
         cpf: string,
-        username: string,
-        password: string,
         address: string,
         situation: string
     ) {
-        super(uid, name, email, cpf, username, password);
+        super(uid, name, cpf);
         this.address = address;
         this.situation = situation;
     }
