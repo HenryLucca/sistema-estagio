@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import Cookie from "js-cookie";
-import firebase from "../firebase/config";
+import firebase from "../backend/firebase/config";
 import User from "@/model/AuthUser";
 import { useRouter } from "next/router";
 
@@ -27,9 +27,9 @@ async function normalizeUser(userFirebase: firebase.User): Promise<User> {
 
 function manageCookie(logged: boolean) {
   if (logged) {
-    Cookie.set("sistema-estagio-auth", 'true', {
+    Cookie.set("sistema-estagio-auth", "true", {
       expires: 7, // 7 days
-    })
+    });
   } else {
     Cookie.remove("sistema-estagio-auth");
   }
@@ -41,7 +41,8 @@ export function AuthProvider(props: any) {
   const [loading, setLoading] = useState(true); // other functions are asyncronous and we want to show the user a loading screen during this time
 
   async function configSession(userFirebase: firebase.User | null) {
-    if (userFirebase?.email) { // if user is logged
+    if (userFirebase?.email) {
+      // if user is logged
       const user = await normalizeUser(userFirebase);
       setUser(user);
       manageCookie(true);
@@ -54,18 +55,18 @@ export function AuthProvider(props: any) {
       return false;
     }
   }
-  
-    async function register(email: string, password: string) {
-      console.log("register");
-      // try {
-      //   const resp = await firebase
-      //     .auth()
-      //     .createUserWithEmailAndPassword(email, password);
-      //   const user = resp.user;
-      // } catch (error) {
-      //   console.log(error);
-      // }
-    }
+
+  async function register(email: string, password: string) {
+    console.log("register");
+    // try {
+    //   const resp = await firebase
+    //     .auth()
+    //     .createUserWithEmailAndPassword(email, password);
+    //   const user = resp.user;
+    // } catch (error) {
+    //   console.log(error);
+    // }
+  }
 
   async function login(email: string, password: string) {
     console.log("login");
@@ -80,27 +81,41 @@ export function AuthProvider(props: any) {
   }
 
   async function loginGoogle() {
-    const resp = await firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    if (resp.user?.email) {
-      const user = await normalizeUser(resp.user!);
-      setUser(user);
+    try {
+      setLoading(true);
+      const resp = await firebase
+        .auth()
+        .signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      if (resp.user?.email) {
+        const user = await normalizeUser(resp.user!);
+        setUser(user);
+      }
+      configSession(resp.user);
+      router.push("/");
+    } finally {
+      setLoading(false);
     }
-    configSession(resp.user);
-    router.push("/");
   }
 
   async function logout() {
-    // await firebase.auth().signOut();
-    // setUser(null);
-    // router.push("/auth");
+    try {
+      setLoading(true);
+      await firebase.auth().signOut();
+      await configSession(null);
+      router.push("/auth");
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
     // onIdTokenChanged is called when the user logs in or logs out, works as a observer
     // when the component is unmounted, the observer is canceled
-    const cancel = firebase.auth().onIdTokenChanged(configSession); 
-    return () => cancel(); 
-  }, [])
+    if (Cookie.get("sistema-estagio-auth")) {
+      const cancel = firebase.auth().onIdTokenChanged(configSession);
+      return () => cancel();
+    }
+  }, []);
 
   return (
     <AuthContext.Provider
