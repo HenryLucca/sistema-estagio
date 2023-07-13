@@ -4,11 +4,11 @@ import chapeu_de_graduacao from "@/../public/card-images/chapeu-de-graduacao.png
 import Image from "next/image";
 import useAppData from "@/hooks/useContext/useAppData";
 
-interface RegisterTypeProps {
+interface ProfileType {
   optionSelect: (option: string) => void;
 }
 
-export default function RegisterType(props: RegisterTypeProps) {
+export default function ProfileType(props: ProfileType) {
   const { theme } = useAppData();
 
   return (

@@ -7,9 +7,11 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Auth() {
-  const [authType, setAuthType] = useState<"login" | "register">("login");
-  const { theme, changeTheme } = useAppData();
   const { register, login, loginGoogle } = useAuth();
+  const [authType, setAuthType] = useState<"login" | "register">("login");
+
+  const { theme, changeTheme } = useAppData();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
@@ -21,19 +23,23 @@ export default function Auth() {
   }
 
   async function submit() {
-    if (authType === "login") {
-      if (login) {
-        await login(email, password);
+    try{
+      if (authType === "login") {
+        if (login) {
+          await login(email, password);
+        }
+      } else {
+        if (password !== passwordConfirm) {
+          showError("Senhas não conferem!");
+          return;
+        }
+  
+        if (register) {
+          await register(email, password);
+        }
       }
-    } else {
-      if (password !== passwordConfirm) {
-        showError("Senhas não conferem!");
-        return;
-      }
-
-      if (register) {
-        await register(email, password);
-      }
+    } catch(e: any) {
+      showError(e?.message || "Ocorreu um erro inesperado.");
     }
   }
 
