@@ -1,17 +1,16 @@
-import User from "./AuthUser";
+import UserData from "./UserData";
 
-export default class Company extends User {
-    type: string;
+export default class Company extends UserData {
+    branch: string;
 
     constructor(
-        id: string | null,
+        id: string | undefined,
         name: string,
         cpf: string,
-        email: string,
-        password: string,
-        type: string
+        branch: string
     ) {
-        super(id, name, cpf, email, password, "company");
-        this.type = type;
+        super(id, name, cpf);
+        this.branch = branch;
+        this.type = "company";
     }
 }

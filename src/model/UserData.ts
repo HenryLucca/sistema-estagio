@@ -1,9 +1,11 @@
 export default abstract class UserData {
-    uid: number | null;
+    uid: string | undefined;
     name: string;
     cpf: string;
+    // type can only be "student", "company" or "coord"
+    type: string | undefined;
 
-    constructor( uid: number | null, name: string, cpf: string ) {
+    constructor( uid: string | undefined, name: string, cpf: string ) {
         this.uid = uid;
         this.name = name;
         this.cpf = cpf;

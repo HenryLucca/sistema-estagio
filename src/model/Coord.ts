@@ -1,17 +1,16 @@
-import User from "./AuthUser";
+import UserData from "./UserData";
 
-export default class Coord extends User{
+export default class Coord extends UserData{
     token: string;
 
     constructor(
-        id: string | null,
+        uid: string | undefined,
         name: string,
         cpf: string,
-        email: string,
-        password: string,
         token: string
     ) {
-        super(id, name, cpf, email, password, "coord");
+        super(uid, name, cpf);
         this.token = token;
+        this.type = "coord";
     }
 }
