@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 interface AuthContextProps {
   user?: User;
+  loading?: boolean;
   register?: (email: string, password: string) => Promise<void>;
   login?: (email: string, password: string) => Promise<void>;
   loginGoogle?: () => Promise<void>;
@@ -57,27 +58,25 @@ export function AuthProvider(props: any) {
   }
 
   async function register(email: string, password: string) {
-    console.log("register");
-    // try {
-    //   const resp = await firebase
-    //     .auth()
-    //     .createUserWithEmailAndPassword(email, password);
-    //   const user = resp.user;
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try{
+      setLoading(true);
+      const resp = await firebase.auth().createUserWithEmailAndPassword(email, password);
+      await configSession(resp.user);
+      router.push("/");
+    } finally {
+      setLoading(false);
+    }
   }
 
   async function login(email: string, password: string) {
-    console.log("login");
-    // try {
-    //   const resp = await firebase
-    //     .auth()
-    //     .signInWithEmailAndPassword(email, password);
-    //   const user = resp.user;
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try{
+      setLoading(true);
+      const resp = await firebase.auth().signInWithEmailAndPassword(email, password);
+      await configSession(resp.user);
+      router.push("/");
+    } finally {
+      setLoading(false);
+    }
   }
 
   async function loginGoogle() {
@@ -90,7 +89,7 @@ export function AuthProvider(props: any) {
         const user = await normalizeUser(resp.user!);
         setUser(user);
       }
-      configSession(resp.user);
+      await configSession(resp.user);
       router.push("/");
     } finally {
       setLoading(false);
@@ -114,6 +113,8 @@ export function AuthProvider(props: any) {
     if (Cookie.get("sistema-estagio-auth")) {
       const cancel = firebase.auth().onIdTokenChanged(configSession);
       return () => cancel();
+    } else {
+      setLoading(false);
     }
   }, []);
 
@@ -121,6 +122,7 @@ export function AuthProvider(props: any) {
     <AuthContext.Provider
       value={{
         user: user || undefined,
+        loading,
         register,
         login,
         loginGoogle,
