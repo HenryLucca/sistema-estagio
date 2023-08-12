@@ -2,10 +2,18 @@ import Image from "next/image";
 import SideItem from "./SideItem";
 import { IconHome, IconLogout, IconProfile } from "@/icons/icons";
 import useAuth from "@/hooks/useContext/useAuth";
+import useUserData from "@/hooks/useContext/useUserData";
+import { useEffect, useState } from "react";
 
 export default function SideBar() {
 
   const {logout } = useAuth();
+  const { getUserData } = useUserData();
+  const [user, setUser] = useState(getUserData?.());
+  
+  useEffect(() => {
+    setUser(getUserData?.());
+  }, [getUserData]);
 
   return (
     <aside className={`
@@ -26,6 +34,7 @@ export default function SideBar() {
       <ul className="flex-grow">
         <SideItem text="Início" icon={IconHome} url="/" />
         <SideItem text="Perfil" icon={IconProfile} url="/profile" />
+        <h1></h1>
       </ul>
       
       <ul className={`flex`}>

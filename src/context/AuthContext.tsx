@@ -58,9 +58,11 @@ export function AuthProvider(props: any) {
   }
 
   async function register(email: string, password: string) {
-    try{
+    try {
       setLoading(true);
-      const resp = await firebase.auth().createUserWithEmailAndPassword(email, password);
+      const resp = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password);
       await configSession(resp.user);
       router.push("/");
     } finally {
@@ -69,9 +71,11 @@ export function AuthProvider(props: any) {
   }
 
   async function login(email: string, password: string) {
-    try{
+    try {
       setLoading(true);
-      const resp = await firebase.auth().signInWithEmailAndPassword(email, password);
+      const resp = await firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password);
       await configSession(resp.user);
       router.push("/");
     } finally {

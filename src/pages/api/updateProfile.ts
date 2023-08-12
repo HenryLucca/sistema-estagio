@@ -25,16 +25,16 @@ export default async function handler(
   }
 
   if (user.type === "coord") {
-    const db = await connectToUserDataDB();
-    if (!db) {
-      res.status(500).json({ error: "Failed to connect to database" });
-      return;
-    }
-    const collection = db.collection("Coordinators");
-    console.log(collection);
-    const result = await collection.insertOne(user);
-    console.log(result);
-    res.status(200).json({ message: "Coordinator added to database" });
+    // const db = await connectToUserDataDB();
+    // if (!db) {
+    //   res.status(500).json({ error: "Failed to connect to database" });
+    //   return;
+    // }
+    // const collection = db.collection("Coordinators");
+    // console.log(collection);
+    // const result = await collection.insertOne(user);
+    // console.log(result);
+    // res.status(200).json({ message: "Coordinator added to database" });
   }
 }
 

@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 import Student from "@/model/Student";
 import useAuth from "@/hooks/useContext/useAuth";
+import useUserData from "@/hooks/useContext/useUserData";
 
 export default function FormProfile() {
   const { theme } = useAppData();
   const { user } = useAuth();
+  const { userData, setUserData } = useUserData();
   const [name, setName] = useState("Nome Sobrenome");
   const [cpf, setCpf] = useState("123.456.789.00");
   const [address, setAddress] = useState("Rua dos Bobos, 0");
@@ -23,6 +25,22 @@ export default function FormProfile() {
   ];
 
   const [formFeedback, setFormFeedback] = useState("");
+
+  useEffect(() => {
+    async function fillForm() {
+      if (userData){
+        const student = userData as Student;
+        setName(student.name);
+        setCpf(student.cpf);
+        setAddress(student.address);
+        setSelectedOption(situationOptions.find((option) => option.value === student.situation));
+        console.log(student);
+      }
+    }
+
+    fillForm();
+  }, [userData]);
+
 
   async function submitHandler(e: any) {
     e.preventDefault();
@@ -118,7 +136,7 @@ export default function FormProfile() {
           </div>
         </div>
         <hr className="mx-7 my-4 border-gray-300 opacity-60" />
-        <div className="flex justify-center items-center mt-10">
+        <div className="flex flex-col justify-center items-center mt-10">
           <p>{formFeedback}</p>
           <button
             onClick={submitHandler}

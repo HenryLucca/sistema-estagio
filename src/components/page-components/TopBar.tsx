@@ -2,6 +2,7 @@ import useAppData from "@/hooks/useContext/useAppData";
 import ChangeThemeButton from "./ChangeThemeButton";
 import Title from "./Title";
 import useAuth from "@/hooks/useContext/useAuth";
+import useUserData from "@/hooks/useContext/useUserData";
 
 interface TopBarProps {
     title: string;
@@ -12,6 +13,8 @@ export default function TopBar(props: TopBarProps){
     const {theme, changeTheme} = useAppData(); // empty string is considered light mode
     const {user} = useAuth();
     const email = user?.email;
+    const { userData } = useUserData();
+    const name = userData?.name;
 
     return (
         <div className={`flex border-stone-900`}>
@@ -19,7 +22,7 @@ export default function TopBar(props: TopBarProps){
             <div className="flex flex-grow gap-2 justify-end items-center">
                 <ChangeThemeButton theme={theme === undefined ? '' : theme} changeTheme={changeTheme}/>
                 <span className="text-stone-900 dark:text-stone-100 font-bold mr-5">
-                    {email}
+                    {name ? name : email}
                 </span>
             </div>
         </div>

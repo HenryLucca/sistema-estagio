@@ -2,14 +2,12 @@ import utilizador from "@/../public/card-images/utilizador.png";
 import construcao from "@/../public/card-images/construcao.png";
 import chapeu_de_graduacao from "@/../public/card-images/chapeu-de-graduacao.png";
 import Image from "next/image";
-import useAppData from "@/hooks/useContext/useAppData";
 
-interface ProfileType {
-  optionSelect: (option: string) => void;
+interface ProfileTypeProps {
+  userTypeSelect: (option: string) => void;
 }
 
-export default function ProfileType(props: ProfileType) {
-  const { theme } = useAppData();
+export default function SelectProfileType(props: ProfileTypeProps) {
 
   return (
     <div
@@ -25,7 +23,7 @@ export default function ProfileType(props: ProfileType) {
 
       <div className="flex items-center justify-center">
         <div
-          onClick={() => props.optionSelect("coordenador")}
+          onClick={() => props.userTypeSelect("coord")}
           className={`
                     bg-zinc-200 dark:bg-zinc-800 mx-8 
                     flex items-center justify-center rounded-2xl
@@ -44,7 +42,7 @@ export default function ProfileType(props: ProfileType) {
         </div>
 
         <div
-          onClick={() => props.optionSelect("empresa")}
+          onClick={() => props.userTypeSelect("company")}
           className={`
                     bg-zinc-200 dark:bg-zinc-800 mx-8
                     flex items-center justify-center rounded-2xl
@@ -63,7 +61,7 @@ export default function ProfileType(props: ProfileType) {
         </div>
 
         <div
-          onClick={() => props.optionSelect("aluno")}
+          onClick={() => props.userTypeSelect("student")}
           className={`
                     bg-zinc-200 dark:bg-zinc-800 mx-8 
                     flex items-center justify-center rounded-2xl
